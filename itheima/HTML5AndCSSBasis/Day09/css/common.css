@@ -1,0 +1,736 @@
+/* 
+    该css用来存放头尾各个页面相同样式 
+    注意：base.css里面设置通用字体为16px，因为默认行高为1.5，所以行高为24px，也就是说字体上下有4px边距
+*/
+
+/* 版心样式 */
+.wrapper {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+/* 快捷导航 */
+.shortcut {
+    height: 52px;
+    background-color: #333;
+}
+
+.shortcut .wrapper {
+    height: 52px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.shortcut ul {
+    display: flex;
+    line-height: 52px;
+}
+
+.shortcut li a {
+    padding: 0 15px;
+    border-right: 1px solid #999;
+    font-size: 14px;
+    color: #fff;
+}
+
+.shortcut li:last-child a {
+    border-right: 0;
+}
+
+.shortcut li .iconfont {
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.shortcut li .login {
+    color: #5eb69c;
+}
+
+
+
+
+
+
+/* 头部 */
+.header {
+    height: 88px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    display: flex;
+}
+
+.logo {
+    width: 200px;
+    height: 88px;
+    margin-right: 40px;
+}
+
+.logo a {
+    width: 200px;
+    height: 88px;
+    display: block;
+    background-image: url(../images/logo.png);
+    font-size: 0;
+}
+
+
+
+
+.nav {
+    margin-top: 34px;
+    margin-right: 28px;
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav li {
+    margin-right: 47px;
+}
+
+.nav li a {
+    padding-bottom: 10px;
+}
+
+.nav li a:hover {
+    color: #5eb69c;
+    border-bottom: 2px solid #5eb69c;
+}
+
+
+
+.search {
+    width: 170px;
+    height: 34px;
+    border-bottom: 2px solid #f4f4f4;
+    margin-top: 30px;
+    margin-right: 45px;
+    display: flex;
+}
+
+.search .iconfont {
+    color: #ccc;
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.search input {
+    flex: 1;
+    /* 如果flex: 1;不生效，则重置input默认宽度 */
+    width: 0;
+    font-size: 16px;
+}
+
+.search input::placeholder {
+    color: #ccc;
+}
+
+
+
+.cart {
+    margin-top: 30px;
+    position: relative;
+}
+
+.cart .iconfont {
+    font-size: 24px;
+}
+
+.cart i {
+    position: absolute;
+    top: 0;
+    /* 不用right是为了防止数字较大时导致UI偏向左 */
+    left: 10px;
+    height: 15px;
+    padding: 0 6px;
+    background-color: #e26237;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #fffefe;
+    line-height: 15px;
+}
+
+
+
+
+
+/* banner */
+
+.banner {
+    height: 500px;
+    background-color: #f5f5f5;
+}
+
+.banner .wrapper {
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner .pic {
+    display: flex;
+    /* 
+        注意：为什么这里的宽这么大？
+        因为ul是弹性容器，它的宽度1240固定了，而多张图片宽度已经超过ul宽度，所以会出现挤压
+        两种解决办法：
+            1、给弹性容器设置多张图片的宽度和，也就是下面3720 = 1240 * 3
+            2、给img设置宽度1240
+    */
+    width: 3720px;
+}
+
+
+.subnav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.42);
+}
+
+.subnav li {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 12px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.subnav li a {
+    margin-right: 5px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.subnav li .classfiy {
+    font-size: 16px;
+    margin-right: 16px;
+}
+
+.subnav li .iconfont {
+    font-size: 14px;
+}
+
+.subnav li:hover {
+    background-color: #00be9a;
+}
+
+.banner ol {
+    position: absolute;
+    right: 16px;
+    bottom: 17px;
+    display: flex;
+}
+
+.banner ol li {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.banner ol i {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: block;
+    margin: 4px;
+}
+
+.banner ol .active {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.banner ol .active i {
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+/* 新鲜好物 */
+.hd {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    height: 42px;
+}
+
+.hd .left {
+    display: flex;
+}
+
+.hd .left h3 {
+    margin-right: 35px;
+    font-size: 30px;
+}
+
+.hd .left p {
+    align-self: flex-end;
+    color: #a1a1a1;
+}
+
+.hd .right .more {
+    line-height: 42px;
+    color: #a1a1a1;
+}
+
+.hd .right .more .iconfont {
+    margin-left: 10px;
+}
+
+.bd ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bd li {
+    width: 304px;
+    height: 404px;
+    background-color: #eef9f4;
+}
+
+.bd li .pic {
+    width: 304px;
+    height: 304px;
+}
+
+.bd li .txt {
+    text-align: center;
+}
+
+.bd li h4 {
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.goods .bd p {
+    font-size: 18px;
+    color: #aa2113;
+}
+
+.goods .bd p span {
+    font-size: 22px;
+    margin-left: 4px;
+}
+
+
+
+
+
+
+/* 人气推荐 */
+
+.recommend .bd li {
+    background-color: #fff;
+}
+
+.recommend .bd p {
+    color: #a1a1a1;
+}
+
+
+
+
+
+/* 热门品牌 */
+.brand {
+    height: 468px;
+    background-color: #f5f5f5;
+    margin-top: 60px;
+    /* 解决margin-top塌陷问题，出现原因是父级brand与子级hd都用了margin-top */
+    overflow: hidden;
+}
+
+.brand .wrapper {
+    height: 468px;
+}
+
+.brand .hd {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.brand .button {
+    position: absolute;
+    right: 0;
+    /* 间距加上子级高度 */
+    bottom: -25px;
+    display: flex;
+}
+
+
+.brand .button a {
+    width: 20px;
+    height: 20px;
+    margin-left: 12px;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+}
+
+.brand .button .prev {
+    background-color: #ddd;
+}
+
+.brand .button .next {
+    background-color: #00be9a;
+}
+
+.brand .bd li {
+    height: 306px;
+    width: 244px;
+}
+
+
+
+/* 生鲜 */
+
+.fresh .hd {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.hd .right {
+    display: flex;
+}
+
+.hd .right ul {
+    margin-top: 10px;
+    margin-right: 58px;
+    display: flex;
+}
+
+.hd .right ul a {
+    margin-left: 6px;
+    height: 20px;
+    display: block;
+    padding: 0 7px;
+    line-height: 20px;
+}
+
+.hd .right ul .active {
+    background-color: #00be9a;
+    color: #fff;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .left {
+    width: 248px;
+    height: 610px;
+}
+
+.content .right {
+    width: 968px;
+    height: 610px;
+}
+
+.content .right ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content .right li {
+    padding: 10px 21px;
+    width: 242px;
+    height: 305px;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.content .pic {
+    width: 200px;
+    height: 180px;
+}
+
+.content .info {
+    height: 60px;
+    margin-top: 14px;
+    margin-bottom: 5px;
+    line-height: 19px;
+}
+
+.content .price {
+    color: #af2f22;
+}
+
+.content .price span {
+    font-size: 22px;
+    margin-left: 4px;
+}
+
+.content li .cover {
+    position: absolute;
+    left: 0;
+    bottom: -86px;
+    width: 242px;
+    height: 84px;
+    background-color: #00be9a;
+    text-align: center;
+    padding-top: 15px;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.content .cover p:nth-child(1) {
+    font-size: 18px;
+}
+
+.content .cover p:nth-child(2) {
+    width: 120px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.11);
+    margin: 3px auto 6px;
+}
+
+.content .cover p:nth-child(3) {
+    font-size: 13px;
+}
+
+.content .cover p:nth-child(3) .iconfont {
+    font-size: 13px;
+}
+
+.content .right li:hover .cover {
+    bottom: 0;
+}
+
+.content .right li:hover {
+    border: 2px solid #00be9a;
+}
+
+
+
+
+
+
+
+/* 最新专题 */
+
+.topic {
+    margin-bottom: 40px;
+}
+
+.topic .hd {
+    margin-top: 100px;
+}
+
+.topic .topic-bd ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.topic-bd li {
+    width: 405px;
+    height: 355px;
+}
+
+.topic-bd .pic {
+    width: 405px;
+    height: 288px;
+    position: relative;
+}
+
+
+.topic-bd .txt {
+    width: 405px;
+    height: 67px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.topic-bd .txt .left {
+    display: flex;
+}
+
+.topic-bd .txt .left p {
+    margin-right: 20px;
+}
+
+.topic-bd .txt .left p:nth-child(1) i {
+    color: #aa2113;
+}
+
+.topic-bd .cover {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 405px;
+    height: 90px;
+    background-image: linear-gradient(180deg, rgba(137, 137, 137, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.topic-bd .cover .left {
+    color: #fff;
+}
+
+.topic-bd .cover .left h4 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+
+.topic-bd .cover .right {
+    padding: 0 7px;
+    height: 25px;
+    background-color: #fff;
+    color: #aa2113;
+}
+
+.topic-bd .cover .right span {
+    font-size: 18px;
+}
+
+
+
+
+/* 底部 */
+
+.footer {
+    height: 580px;
+    background-color: #f5f5f5;
+}
+
+.service {
+    padding: 60px 0;
+    height: 178px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.service ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.service li {
+    width: 190px;
+    height: 58px;
+    display: flex;
+}
+
+.service li h5 {
+    width: 58px;
+    height: 58px;
+    background-image: url(../images/sprite.png);
+    margin-right: 20px;
+}
+
+.service li:nth-child(2) h5 {
+    background-position: 0 -58px;
+}
+
+.service li:nth-child(3) h5 {
+    background-position: 0 -116px;
+}
+
+.service li:nth-child(4) h5 {
+    background-position: 0 -174px;
+}
+
+.service li p {
+    line-height: 58px;
+    font-size: 28px;
+}
+
+
+
+.help {
+    padding-top: 60px;
+    height: 302px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.help .left {
+    display: flex;
+}
+
+.help .left dl {
+    margin-right: 84px;
+}
+
+.help .left dl:last-child {
+    margin-right: 0;
+}
+
+.help .left dt {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.help .left dd {
+    margin-bottom: 10px;
+}
+
+.help .left dd a {
+    color: #969696;
+}
+
+.help .left .iconfont {
+    color: #5eb69c;
+}
+
+.help .right ul {
+    display: flex;
+}
+
+.help .right li:first-child {
+    margin-right: 55px;
+}
+
+.help .right .pic {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+.help .right p {
+    color: #969696;
+    text-align: center;
+}
+
+
+
+.copyright {
+    text-align: center;
+}
+
+.copyright p {
+    margin-bottom: 10px;
+    color: #a1a1a1;
+}
+
+.copyright p a {
+    color: #a1a1a1;
+    margin: 0 10px;
+}
